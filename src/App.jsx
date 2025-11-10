@@ -35,7 +35,11 @@ function App() {
     <>
       <div className="app-container">
 
+        <h1>Articoli</h1>
+        <div className="articoli-container">
 
+
+        </div>
 
       </div>
 
