@@ -38,34 +38,44 @@ function App() {
     e.preventDefault();
 
     if (nuovoTitolo.trim() === "") return;
-  };
-  return (
-    <>
-      <div className="app-container">
 
-        <h1>Articoli</h1>
-        <div className="articoli-container">
-          {articoli.map((articolo) => (
-            <article key={articolo.id} className="articolo">
-              <img
-                src={articolo.immagine}
-                alt={articolo.titolo}
-                className="articolo-img"
-              />
-              <div className="articolo-contenuto">
-                <h2>{articolo.titolo}</h2>
-                <p className="articolo-meta">
-                  <strong>{articolo.autore}</strong> – <em>{articolo.data}</em>
-                </p>
-                <p className="articolo-testo">{articolo.contenuto}</p>
-                <button className="btn-leggi">Leggi di più</button>
-              </div>
-            </article>
-          ))};
+    const nuovoArticolo = {
+      id: articoli.length + 1,
+      titolo: nuovoTitolo,
+      autore: "Autore sconosciuto",
+      data: new Date().toLocaleDateString("it-IT", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }),
+    };
+    return (
+      <>
+        <div className="app-container">
+
+          <h1>Articoli</h1>
+          <div className="articoli-container">
+            {articoli.map((articolo) => (
+              <article key={articolo.id} className="articolo">
+                <img
+                  src={articolo.immagine}
+                  alt={articolo.titolo}
+                  className="articolo-img"
+                />
+                <div className="articolo-contenuto">
+                  <h2>{articolo.titolo}</h2>
+                  <p className="articolo-meta">
+                    <strong>{articolo.autore}</strong> – <em>{articolo.data}</em>
+                  </p>
+                  <p className="articolo-testo">{articolo.contenuto}</p>
+                  <button className="btn-leggi">Leggi di più</button>
+                </div>
+              </article>
+            ))};
+          </div>
         </div>
-      </div>
-    </>
-  )
-}
+      </>
+    )
+  }
 
-export default App
+  export default App
