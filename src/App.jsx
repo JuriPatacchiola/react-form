@@ -36,6 +36,8 @@ function App() {
 
   const aggiungiArticolo = (e) => {
     e.preventDefault();
+
+    if (nuovoTitolo.trim() === "") return;
   };
   return (
     <>
