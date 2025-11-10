@@ -48,34 +48,39 @@ function App() {
         month: "long",
         year: "numeric"
       }),
+      immagine:
+        "https://via.placeholder.com/300x200?text=Nuovo+Articolo",
+      contenuto:
+        "Questo è un nuovo articolo aggiunto tramite il form. Puoi espandere questa sezione per aggiungere più campi come autore, immagine o testo completo."
     };
-    return (
-      <>
-        <div className="app-container">
+  };
+  return (
+    <>
+      <div className="app-container">
 
-          <h1>Articoli</h1>
-          <div className="articoli-container">
-            {articoli.map((articolo) => (
-              <article key={articolo.id} className="articolo">
-                <img
-                  src={articolo.immagine}
-                  alt={articolo.titolo}
-                  className="articolo-img"
-                />
-                <div className="articolo-contenuto">
-                  <h2>{articolo.titolo}</h2>
-                  <p className="articolo-meta">
-                    <strong>{articolo.autore}</strong> – <em>{articolo.data}</em>
-                  </p>
-                  <p className="articolo-testo">{articolo.contenuto}</p>
-                  <button className="btn-leggi">Leggi di più</button>
-                </div>
-              </article>
-            ))};
-          </div>
+        <h1>Articoli</h1>
+        <div className="articoli-container">
+          {articoli.map((articolo) => (
+            <article key={articolo.id} className="articolo">
+              <img
+                src={articolo.immagine}
+                alt={articolo.titolo}
+                className="articolo-img"
+              />
+              <div className="articolo-contenuto">
+                <h2>{articolo.titolo}</h2>
+                <p className="articolo-meta">
+                  <strong>{articolo.autore}</strong> – <em>{articolo.data}</em>
+                </p>
+                <p className="articolo-testo">{articolo.contenuto}</p>
+                <button className="btn-leggi">Leggi di più</button>
+              </div>
+            </article>
+          ))};
         </div>
-      </>
-    )
-  }
+      </div>
+    </>
+  )
+}
 
-  export default App
+export default App
