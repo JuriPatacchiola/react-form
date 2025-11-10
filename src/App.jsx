@@ -31,6 +31,11 @@ function App() {
     }
   ];
 
+
+  const [nuovoTitolo, setNuovoTitolo] = useState("");
+
+
+
   return (
     <>
       <div className="app-container">
@@ -53,12 +58,9 @@ function App() {
                 <button className="btn-leggi">Leggi di più</button>
               </div>
             </article>
-          ))}
-
+          ))};
         </div>
-
       </div>
-
     </>
   )
 }
