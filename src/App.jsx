@@ -37,7 +37,23 @@ function App() {
 
         <h1>Articoli</h1>
         <div className="articoli-container">
-
+          {articoli.map((articolo) => (
+            <article key={articolo.id} className="articolo">
+              <img
+                src={articolo.immagine}
+                alt={articolo.titolo}
+                className="articolo-img"
+              />
+              <div className="articolo-contenuto">
+                <h2>{articolo.titolo}</h2>
+                <p className="articolo-meta">
+                  <strong>{articolo.autore}</strong> – <em>{articolo.data}</em>
+                </p>
+                <p className="articolo-testo">{articolo.contenuto}</p>
+                <button className="btn-leggi">Leggi di più</button>
+              </div>
+            </article>
+          ))}
 
         </div>
 
