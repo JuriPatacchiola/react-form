@@ -1,7 +1,7 @@
 
 
 function App() {
-  const articoli = [
+  const [articoli, setArticoli] = useState([
     {
       id: 1,
       titolo: "La transizione ai veicoli elettrici",
@@ -29,13 +29,14 @@ function App() {
       contenuto:
         "L’estrazione del litio è un tema cruciale per comprendere la sostenibilità della mobilità elettrica. Nuove tecnologie promettono di ridurne l’impatto ambientale."
     }
-  ];
+  ]);
 
 
   const [nuovoTitolo, setNuovoTitolo] = useState("");
 
-
-
+  const aggiungiArticolo = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <div className="app-container">
